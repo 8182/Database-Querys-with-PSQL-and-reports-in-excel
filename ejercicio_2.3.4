@@ -1,0 +1,26 @@
+--BUSQUEDA DE REGISTROS
+
+Select * 
+FROM public.pagos
+WHERE pagos.created < '2019-01-01' OR pagos.created >'2019-12-31';
+
+Select * 
+FROM public.historicocobros
+WHERE historicocobros.created < '2019-01-01' OR historicocobros.created >'2019-12-31';
+
+--Query para borrar los datos que la fecha de creacion no corresponda al 2019 en historicocobros
+
+DELETE 
+FROM public.historicocobros
+WHERE historicocobros.created < '2019-01-01' OR historicocobros.created >'2019-12-31';
+-- se borraron 5825113 archivos
+
+--Query para borrar los datos que la fecha de creacion no corresponda al 2019 en Pagos
+
+DELETE 
+FROM public.pagos
+WHERE pagos.created < '2019-01-01' OR pagos.created >'2019-12-31';
+-- se borraron 430139 archivos
+
+--query para revisar si se realizo la eliminacion de registros 2018-2020 
+SELECT EXTRACT(YEAR FROM pagos.created) FROM public.pagos GROUP BY EXTRACT(YEAR FROM pagos.created) ;

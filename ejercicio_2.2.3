@@ -1,0 +1,20 @@
+﻿-- Query para conocer los estados y sus ID
+
+SELECT id, nombre
+	FROM public.estadopagos;
+
+-- estado anulado = 3
+--Query para ver la cantidad de datos a actualizar
+
+SELECT *
+FROM public.pagos
+WHERE pagos.fecha BETWEEN '2019-01-01' AND '2019-12-31'
+AND pagos.monto < 5000;
+
+-- update del estado de pago para los registros del año 2019 en que el monto sea menor a 5.000
+
+UPDATE public.pagos
+SET estadopago_id = 3
+WHERE fecha BETWEEN '2019-01-01' AND '2019-12-31'
+AND monto < 5000;
+-- actualizo 122049 registros
