@@ -18,7 +18,10 @@ crear un reporte en formato excel con los registros de ese día, identificando l
 De la tabla "pagos" identificar la suma de los montos pagados por día del mes, del mes de enero del año 2019. 
 Generar un reporte en formato excel con esta información, indicando el total general diario y el total diario por empresa .
 
-Ejercicio 2.
+Ejercicio 2
+
 2.1- Actualizar todos los pagos de la empresa "Edesur" a la empresa "Edenorte" cuyo monto sea mayor a $5000.
+
 2.2- Poner en estado anulado todos los pagos del 2019 cuyo valor sea inferior a DOP $5000 y USD $10 (de existir).
+
 2.3- Eliminar todos los registros de pagos e historicocobros cuya fecha de creación sea anterior y posterior al 2019.
